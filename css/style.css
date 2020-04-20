@@ -28,27 +28,40 @@ body {
 }
 
 .logo {
-    max-height: 20vh;       
+    /* display: none; */
+    max-height: 17vh;   
+    /* animation-name: moveInLeft;
+    animation-duration: 2s;     */
 }
-
 
 .heading-primary {
     color: rgb(255, 255, 255);
     /* color: black; */
     text-transform: uppercase;
+    backface-visibility: hidden;
 }
+
 .heading-primary-main {
     line-height: normal;
     font-size: 80px;
     font-weight: 300;
     letter-spacing: 15px;
     display: block;
+
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    backface-visibility: hidden;
 }
+
 .heading-primary-sub {
     font-size: 36px;
     font-weight: 300;
     letter-spacing: 4px;
     display: block;
+
+    animation-name: moveInUp;
+    animation-duration: 2s;
+    /* animation-delay: 2s; */
 }
 
 .text-box {
@@ -59,8 +72,42 @@ body {
     left: 50%;
     /* background-color: rgba(255, 0, 0, 0.322); */
     transform: translate(-50%, -50%);
+
+
 }
 
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    
+    80% {
+        /* transform: translateX(5px); */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    
+    80% {
+        /* transform: translateX(5px); */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
 
 @media screen and (max-width: 768px) {
     .text-box {
