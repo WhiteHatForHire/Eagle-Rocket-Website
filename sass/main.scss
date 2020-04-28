@@ -1,0 +1,217 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: #777;
+    /* padding: 40px; */
+    box-sizing: border-box;
+}
+
+.header {
+    height: 97vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.63), rgba(255, 94, 0, 0.281)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+}
+
+.header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.header__logo {
+    /* display: none; */
+    max-height: 17vh;   
+    /* animation-name: moveInLeft;
+    animation-duration: 2s;     */
+}
+
+.heading-primary {
+    color: white;
+    /* color: black; */
+    text-transform: uppercase;
+    backface-visibility: hidden;
+}
+
+.heading-primary--main {
+    line-height: normal;
+    font-size: 8rem;
+    font-weight: 30rem;
+    letter-spacing: 1.5rem;
+    display: block;
+
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    backface-visibility: hidden;
+}
+
+.heading-primary--sub {
+    font-size: 3.6rem;
+    font-weight: 300;
+    letter-spacing: 0.4rem;
+    display: block;
+
+    animation-name: moveInUp;
+    animation-duration: 2s;
+    /* animation-delay: 2s; */
+}
+
+.header__text-box {
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* background-color: rgba(255, 0, 0, 0.322); */
+    transform: translate(-50%, -50%);
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+}
+
+.btn--white {
+    border-radius: 6rem;
+    margin-top: 5rem;
+    background-color: white;
+    color: black;
+    padding: 1.2rem 3.0rem;
+    display: inline-block;
+    position: relative;
+}
+
+.fade-in {
+    animation-fill-mode: backwards;
+    animation: fadeIn 0.8s ease-out .75s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    transition: 0.25s;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+    animation-fill-mode: backwards;
+    backface-visibility: hidden;
+    transition: 0.15s;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    backface-visibility: hidden;
+}
+
+.btn--white::after {
+    background-color: rgba(255, 255, 255, 0.144);
+}
+
+.btn:hover::after {
+    transform: scale(1.5);
+    opacity: 0;
+    transition: 0.25s;
+
+}
+
+
+
+
+/* animations */
+
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-6rem);
+    }
+    
+    80% {
+        /* transform: translateX(5px); */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(6rem);
+    }
+    
+    80% {
+        /* transform: translateX(5px); */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+    
+    80% {
+        /* transform: translateX(5px); */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }i
+}
+
+/* @media screen and (min-width: 768px) and (max-width: 1028px) {
+
+} */
+@media screen and (max-width: 768px) {
+    .text-box {
+        top: 55%;
+    } 
+    
+    .heading-primary-main {
+        font-weight: 400;
+        font-size: 5rem;
+        /* margin-top: 40px; */
+    }
+    .heading-primary-sub {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+}
